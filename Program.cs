@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using project.data; // ? Replace with your actual namespace if different
+
 namespace WebApplication1
 {
     public class Program
@@ -5,6 +8,10 @@ namespace WebApplication1
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // ? Add DbContext registration
+            builder.Services.AddDbContext<app_DBcontext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("AppDB_new")));
 
             // Add services to the container.
             builder.Services.AddControllers();
@@ -20,3 +27,4 @@ namespace WebApplication1
         }
     }
 }
+
