@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using project.data; // ? Replace with your actual namespace if different
+using project.data;
 
 namespace WebApplication1
 {
