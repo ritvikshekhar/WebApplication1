@@ -9,7 +9,7 @@ namespace WebApplication1
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // ? Add DbContext registration
+            // Add DbContext registration
             builder.Services.AddDbContext<app_DBcontext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("AppDB_new")));
 
